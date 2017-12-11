@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+<title>laderas_03</title>
+
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./3d/Qgis2threejs.css">
+<link rel="stylesheet" href="/3d/css/normalize.css">
+  <link rel="stylesheet" href="/3d/css/main.css">
+  <script src="/3d/js/vendor/modernizr-2.6.2.min.js"></script>
+
+
+  <style type="text/css">
+  .back-link a {
+    color: #4ca340;
+    text-decoration: none; 
+    border-bottom: 1px #4ca340 solid;
+  }
+  .back-link a:hover,
+  .back-link a:focus {
+    color: #408536; 
+    text-decoration: none;
+    border-bottom: 1px #408536 solid;
+  }
+  h1 {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    margin-bottom: 3px;
+  }
+  .entry-header {
+    text-align: left;
+    margin: 0 auto 50px auto;
+    width: 80%;
+        max-width: 978px;
+    position: relative;
+    z-index: 10001;
+  }
+  #demo-content {
+    padding-top: 100px;
+  }
+  </style>
+</head>
+<body>
+
+<!-- footer
+<div id="mosca"><img src=".\3d\imagen/menbrete_01.png" width="550px"/> </a></div> -->
+<div id="crea"><a href="https://www.facebook.com/georevol.chiara" target="_blank"><img src="\3d\imagen/fin.png" height="40px",width="40px"></a></div>
+
+
+<div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+    </div>
+
+
+<div id="webgl"></div>
+
+<!-- popup -->
+<div id="popup" style="display:none;">
+<div id="closebtn">&times;</div>
+<div id="popupbar"></div>
+<div id="popupbody">
+ <div id="popupcontent"></div>
+ <div id="pageinfo">
+ 
+
+  <h1>DESCRIPCION</h1>
+
+<li>Zona  :18L</li>
+<li>EPSG :32718</li>
+<li>Datum :WGS 1984</li>
+<li>Proyección:UTM</li>
+  <h1>USOS</h1>
+<li>R :Auto Rotación On / Off</li>
+<li>U :De Cabeza  Al Reves</li>
+<li>L :Visibilida De Etiqueta</li>
+<li>W         :Modo Alambre</li>
+<li>Shift+R :Restablecer vista</li>
+<li>Shift+S :Guardar Imagen</li>
+<img src=".\3d\imagen/datos.png" width="280px"/> 
+<img src=".\3d\imagen/datos_01.png" width="300px"/> 
+  </div>
+ </div>
+</div></div>
+
+<!-- footer -->
+<div id="footer"><div id="infobtn">i</div></div></div>
+</div>
+
+<script src="./3d/threejs/three.min.js"></script>
+<script src="./3d/Qgis2threejs.js"></script>
+<script src="./3d/threejs/OrbitControls.js"></script>
+<script>
+var option = Q3D.Options;
+
+</script>
+<script src="./3d/threejs/loaders/ColladaLoader.js"></script>
+<script src="./3d/laderas_03.js"></script>
+<script>
+if (typeof proj4 !== "undefined") document.getElementById("lib_proj4js").style.display = "list-item";
+
+var container = document.getElementById("webgl");
+// initialize application
+var app = Q3D.application;
+app.init(container);
+
+// load the project
+app.loadProject(project);
+document.getElementById("infobtn").onclick = app.showInfo.bind(app);
+if ("hidebutton" in app.urlParams) document.getElementById("infobtn").style.display = "none";
+
+app.addEventListeners();
+app.start();
+
+
+</script>
+<script src="./3d/dat-gui/dat.gui.min.js"></script>
+<script src="./3d/dat-gui_panel.js"></script>
+<script>
+// initialize dat-gui panel
+Q3D.gui.init();
+</script>
+<script>window.jQuery || document.write('<script src="./3d/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="./3d/js/main.js"></script>
+</body>
+</html>
